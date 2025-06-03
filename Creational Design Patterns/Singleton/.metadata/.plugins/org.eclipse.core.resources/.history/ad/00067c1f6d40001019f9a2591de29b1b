@@ -1,0 +1,27 @@
+package builder;
+
+public class Builder {
+    
+     public Builder(CarBulder builder) {
+    	 this.engine=builder.
+     }
+	public String getEngine() {
+		return engine;
+	}
+	public int getWheels() {
+		return wheels;
+	}
+	public int getSeats() {
+		return seats;
+	}
+	public String getColor() {
+		return color;
+	}
+	public boolean isSunroof() {
+		return sunroof;
+	}
+	public boolean isNavigationSystem() {
+		return navigationSystem;
+	}
+     
+}
