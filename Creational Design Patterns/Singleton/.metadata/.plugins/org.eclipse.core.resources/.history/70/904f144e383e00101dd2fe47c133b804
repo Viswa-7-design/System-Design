@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author VISWANADHAM
- *
- */
-module Singleton {
-}
