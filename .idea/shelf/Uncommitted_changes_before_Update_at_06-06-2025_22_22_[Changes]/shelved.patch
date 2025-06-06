@@ -1,0 +1,983 @@
+Index: Creational Design Patterns/Singleton/Singleton/src/Singleton/Synchrons.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/src/Singleton/Synchrons.java b/Creational Design Patterns/Singleton/Singleton/src/Singleton/Synchrons.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/src/Singleton/Synchrons.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-package Singleton;
+-
+-public class Synchrons {
+-	private static Synchrons instance;
+-	  private Synchrons() {
+-		  
+-	  }
+-	  synchronized public static Synchrons getInstance() {
+-		  if(instance==null) {
+-			  instance=new Synchrons();
+-		  }
+-		  return instance;
+-	  }
+-	  public void getFun() {
+-		  System.out.println("Synchrons Singleton Class");
+-	  }
+-}
+Index: Creational Design Patterns/Singleton/Factory/src/Factory/Bike.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Factory/src/Factory/Bike.java b/Creational Design Patterns/Singleton/Factory/src/Factory/Bike.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Factory/src/Factory/Bike.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,11 +0,0 @@
+-package Factory;
+-
+-public class Bike implements Vehicle {
+-
+-	@Override
+-	public void createVehicle() {
+-		System.out.println("Bike class");
+-		
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacTextBox.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacTextBox.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacTextBox.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacTextBox.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,11 +0,0 @@
+-package abstract_Factory;
+-
+-public class MacTextBox implements TextBox{
+-
+-	@Override
+-	public void showText() {
+-		// TODO Auto-generated method stub
+-		System.out.println("Mac Text box");
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Prototype/src/module-info.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Prototype/src/module-info.java b/Creational Design Patterns/Singleton/Prototype/src/module-info.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Prototype/src/module-info.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,9 +0,0 @@
+-/**
+- * 
+- */
+-/**
+- * @author VISWANADHAM
+- *
+- */
+-module Prototype {
+-}
+\ No newline at end of file
+Index: Creational Design Patterns/Singleton/Prototype/.project
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Prototype/.project b/Creational Design Patterns/Singleton/Prototype/.project
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Prototype/.project	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<projectDescription>
+-	<name>Prototype</name>
+-	<comment></comment>
+-	<projects>
+-	</projects>
+-	<buildSpec>
+-		<buildCommand>
+-			<name>org.eclipse.jdt.core.javabuilder</name>
+-			<arguments>
+-			</arguments>
+-		</buildCommand>
+-	</buildSpec>
+-	<natures>
+-		<nature>org.eclipse.jdt.core.javanature</nature>
+-	</natures>
+-</projectDescription>
+Index: Creational Design Patterns/Singleton/Builder/src/builder/Car.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Builder/src/builder/Car.java b/Creational Design Patterns/Singleton/Builder/src/builder/Car.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Builder/src/builder/Car.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,82 +0,0 @@
+-package builder;
+-
+-public class Car {
+-	 private String engine;
+-     private int wheels;
+-     private int seats;
+-     private String color;
+-     private boolean sunroof;
+-     private boolean navigationSystem;
+-     private Car(CarBuilder builder) {
+-    	 this.engine=builder.engine;
+-    	 this.wheels=builder.wheels;
+-    	 this.color=builder.color;
+-    	 this.navigationSystem=builder.navigationSystem;
+-    	 this.seats=builder.seats;
+-    	 this.sunroof=builder.sunroof;
+-     }
+-	public String getEngine() {
+-		return engine;
+-	}
+-	public int getWheels() {
+-		return wheels;
+-	}
+-	public int getSeats() {
+-		return seats;
+-	}
+-	public String getColor() {
+-		return color;
+-	}
+-	public boolean isSunroof() {
+-		return sunroof;
+-	}
+-	public boolean isNavigationSystem() {
+-		return navigationSystem;
+-	}
+-     
+-    @Override
+-	public String toString() {
+-		return "Car [engine=" + engine + ", wheels=" + wheels + ", seats=" + seats + ", color=" + color + ", sunroof="
+-				+ sunroof + ", navigationSystem=" + navigationSystem + "]";
+-	}
+-
+-	public static class CarBuilder{
+-    	 private String engine="yamaha";
+-         private int wheels=4;
+-         private int seats=5;
+-         private String color="black";
+-         private boolean sunroof=false;
+-         private boolean navigationSystem=false;
+-         
+-    
+-
+-	public CarBuilder setEngine(String engine) {
+-		this.engine = engine;
+-		return this;
+-	}
+-	public CarBuilder setWheels(int wheels) {
+-		this.wheels = wheels;
+-		return this;
+-	}
+-	public CarBuilder setSeats(int seats) {
+-		this.seats = seats;
+-		return this;
+-	}
+-	public CarBuilder setColor(String color) {
+-		this.color = color;
+-		return this;
+-	}
+-	public CarBuilder setSunroof(boolean sunroof) {
+-		this.sunroof = sunroof;
+-		return this;
+-	}
+-	public CarBuilder setNavigationSystem(boolean navigationSystem) {
+-		this.navigationSystem = navigationSystem;
+-		return this;
+-	}
+-	public Car build() {
+-		return new Car(this);
+-	}
+-	
+-    }
+-}
+Index: Creational Design Patterns/Singleton/Singleton/src/Singleton/DoubleLock.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/src/Singleton/DoubleLock.java b/Creational Design Patterns/Singleton/Singleton/src/Singleton/DoubleLock.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/src/Singleton/DoubleLock.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,21 +0,0 @@
+-package Singleton;
+-
+-public class DoubleLock {
+-      private static volatile DoubleLock instance;
+-      private DoubleLock() {
+-    	  
+-      }
+-      public static DoubleLock getInstance() {
+-    	  if(instance==null) {
+-    		  synchronized (DoubleLock.class) {
+-				if(instance==null) {
+-					instance=new DoubleLock();
+-				}
+-			}
+-    	  }
+-    	  return instance;
+-      }
+-      public void getFun() {
+-		  System.out.println("DoubleLock Singleton Class");
+-	  }
+-}
+Index: Creational Design Patterns/Singleton/Builder/src/builder/Main.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Builder/src/builder/Main.java b/Creational Design Patterns/Singleton/Builder/src/builder/Main.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Builder/src/builder/Main.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,14 +0,0 @@
+-package builder;
+-
+-public class Main {
+-
+-	public static void main(String[] args) {
+-		// TODO Auto-generated method stub
+-      //Car.CarBuilder builder=new Car.CarBuilder();
+-      Car car1=new Car.CarBuilder().setEngine("v8").setColor("red").setSeats(5).setSunroof(true).build();
+-      System.out.println(car1);
+-      Car car2=new Car.CarBuilder().setColor("Blue").setSeats(4).build();
+-      System.out.println(car2);
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Singleton/src/Singleton/Eager.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/src/Singleton/Eager.java b/Creational Design Patterns/Singleton/Singleton/src/Singleton/Eager.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/src/Singleton/Eager.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,14 +0,0 @@
+-package Singleton;
+-
+-public class Eager {
+-  private static Eager instance=new Eager();
+-  private Eager() {
+-	  
+-  }
+-  public static Eager getInstance() {
+-	  return instance;
+-  }
+-  public void getFun() {
+-	  System.out.println("Eager Singleton Class");
+-  }
+-}
+Index: Creational Design Patterns/Singleton/Factory/.project
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Factory/.project b/Creational Design Patterns/Singleton/Factory/.project
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Factory/.project	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<projectDescription>
+-	<name>Factory</name>
+-	<comment></comment>
+-	<projects>
+-	</projects>
+-	<buildSpec>
+-		<buildCommand>
+-			<name>org.eclipse.jdt.core.javabuilder</name>
+-			<arguments>
+-			</arguments>
+-		</buildCommand>
+-	</buildSpec>
+-	<natures>
+-		<nature>org.eclipse.jdt.core.javanature</nature>
+-	</natures>
+-</projectDescription>
+Index: Creational Design Patterns/Singleton/Prototype/src/prototype/Prototype.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Prototype/src/prototype/Prototype.java b/Creational Design Patterns/Singleton/Prototype/src/prototype/Prototype.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Prototype/src/prototype/Prototype.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,23 +0,0 @@
+-package prototype;
+-
+-public class Prototype {
+-public Bean prototypeCharacter;
+-public Prototype() {
+-	prototypeCharacter=new Bean("viswa", 100, 50, 3); //default values
+-}
+-public Bean createCharcterwithNewName(String name) throws CloneNotSupportedException {
+-	Bean clonedCharacter=prototypeCharacter.clone();
+-	clonedCharacter=new Bean(name, clonedCharacter.getHealth(), clonedCharacter.getAttackPower(), clonedCharacter.getLevel());
+-return clonedCharacter;
+-}
+-public Bean createCharcterwithNewlevel(int level) throws CloneNotSupportedException {
+-	Bean clonedCharacter=prototypeCharacter.clone();
+-	clonedCharacter=new Bean(clonedCharacter.getName(), clonedCharacter.getHealth(), clonedCharacter.getAttackPower(), level);
+-return clonedCharacter;
+-}
+-public Bean createCharcterwithNewattackPower(int  attackPower) throws CloneNotSupportedException {
+-	Bean clonedCharacter=prototypeCharacter.clone();
+-	clonedCharacter=new Bean(clonedCharacter.getName(), clonedCharacter.getHealth(), attackPower , clonedCharacter.getLevel());
+-return clonedCharacter;
+-}
+-}
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/Button.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/Button.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/Button.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/Button.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,5 +0,0 @@
+-package abstract_Factory;
+-
+-public interface Button {
+-        public void press();
+-}
+Index: Creational Design Patterns/Singleton/Singleton/src/module-info.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/src/module-info.java b/Creational Design Patterns/Singleton/Singleton/src/module-info.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/src/module-info.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,9 +0,0 @@
+-/**
+- * 
+- */
+-/**
+- * @author VISWANADHAM
+- *
+- */
+-module Singleton {
+-}
+\ No newline at end of file
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/GUIAbstractFactory.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/GUIAbstractFactory.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/GUIAbstractFactory.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/GUIAbstractFactory.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,13 +0,0 @@
+-package abstract_Factory;
+-
+-public class GUIAbstractFactory {
+- public static IFactory createFActory(String s) {
+-	 if(s.equals("mac")) {
+-		 return new MacFactory();
+-	 }
+-	 else if(s.equals("wind")){
+-		 return new WinFactory();
+-	 }
+-     return new MacFactory();
+- }
+-}
+Index: Creational Design Patterns/Singleton/Builder/.project
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Builder/.project b/Creational Design Patterns/Singleton/Builder/.project
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Builder/.project	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<projectDescription>
+-	<name>Builder</name>
+-	<comment></comment>
+-	<projects>
+-	</projects>
+-	<buildSpec>
+-		<buildCommand>
+-			<name>org.eclipse.jdt.core.javabuilder</name>
+-			<arguments>
+-			</arguments>
+-		</buildCommand>
+-	</buildSpec>
+-	<natures>
+-		<nature>org.eclipse.jdt.core.javanature</nature>
+-	</natures>
+-</projectDescription>
+Index: Creational Design Patterns/Singleton/Factory/src/Factory/Car.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Factory/src/Factory/Car.java b/Creational Design Patterns/Singleton/Factory/src/Factory/Car.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Factory/src/Factory/Car.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,11 +0,0 @@
+-package Factory;
+-
+-public class Car implements Vehicle {
+-
+-	@Override
+-	public void createVehicle() {
+-		System.out.println("Car class");
+-		
+-	}
+- 
+-}
+Index: Creational Design Patterns/Singleton/Builder/src/module-info.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Builder/src/module-info.java b/Creational Design Patterns/Singleton/Builder/src/module-info.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Builder/src/module-info.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,9 +0,0 @@
+-/**
+- * 
+- */
+-/**
+- * @author VISWANADHAM
+- *
+- */
+-module Builder {
+-}
+\ No newline at end of file
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WinFactory.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WinFactory.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WinFactory.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WinFactory.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-package abstract_Factory;
+-
+-public class WinFactory implements IFactory{
+-
+-	@Override
+-	public Button createButton() {
+-		// TODO Auto-generated method stub
+-		return new WindowButton();
+-	}
+-
+-	@Override
+-	public TextBox createTextBox() {
+-		// TODO Auto-generated method stub
+-		return new WinTextBox();
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Builder/.classpath
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Builder/.classpath b/Creational Design Patterns/Singleton/Builder/.classpath
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Builder/.classpath	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<classpath>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+-		<attributes>
+-			<attribute name="module" value="true"/>
+-		</attributes>
+-	</classpathentry>
+-	<classpathentry kind="src" path="src"/>
+-	<classpathentry kind="output" path="bin"/>
+-</classpath>
+Index: Creational Design Patterns/Singleton/Abstract_Factory/.classpath
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/.classpath b/Creational Design Patterns/Singleton/Abstract_Factory/.classpath
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/.classpath	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<classpath>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+-		<attributes>
+-			<attribute name="module" value="true"/>
+-		</attributes>
+-	</classpathentry>
+-	<classpathentry kind="src" path="src"/>
+-	<classpathentry kind="output" path="bin"/>
+-</classpath>
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/module-info.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/module-info.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/module-info.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/module-info.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,9 +0,0 @@
+-/**
+- * 
+- */
+-/**
+- * @author VISWANADHAM
+- *
+- */
+-module Abstract_Factory {
+-}
+\ No newline at end of file
+Index: Creational Design Patterns/Singleton/Prototype/src/prototype/Bean.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Prototype/src/prototype/Bean.java b/Creational Design Patterns/Singleton/Prototype/src/prototype/Bean.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Prototype/src/prototype/Bean.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,52 +0,0 @@
+-package prototype;
+-
+-public class Bean implements Cloneable{
+-    private String name;
+-    private int health;
+-    private int attackPower;
+-    private int level;
+-	public Bean(String name, int health, int attackPower, int level) {
+-		super();
+-		this.name = name;
+-		this.health = health;
+-		this.attackPower = attackPower;
+-		this.level = level;
+-	}
+-	
+-	public String getName() {
+-		return name;
+-	}
+-
+-	public int getHealth() {
+-		return health;
+-	}
+-
+-	public int getAttackPower() {
+-		return attackPower;
+-	}
+-
+-	public int getLevel() {
+-		return level;
+-	}
+-
+-	public void setName(String name) {
+-		this.name = name;
+-	}
+-	public void setHealth(int health) {
+-		this.health = health;
+-	}
+-	public void setAttackPower(int attackPower) {
+-		this.attackPower = attackPower;
+-	}
+-	public void setLevel(int level) {
+-		this.level = level;
+-	}
+-	@Override
+-	public String toString() {
+-		return "Bean [name=" + name + ", health=" + health + ", attackPower=" + attackPower + ", level=" + level + "]";
+-	}
+-	public Bean clone() throws CloneNotSupportedException {
+-		return (Bean)super.clone();
+-	}
+-    
+-}
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WindowButton.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WindowButton.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WindowButton.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WindowButton.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,11 +0,0 @@
+-package abstract_Factory;
+-
+-public class WindowButton implements Button{
+-
+-	@Override
+-	public void press() {
+-		// TODO Auto-generated method stub
+-		System.out.println("Window Button");
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Singleton/.project
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/.project b/Creational Design Patterns/Singleton/Singleton/.project
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/.project	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<projectDescription>
+-	<name>Singleton</name>
+-	<comment></comment>
+-	<projects>
+-	</projects>
+-	<buildSpec>
+-		<buildCommand>
+-			<name>org.eclipse.jdt.core.javabuilder</name>
+-			<arguments>
+-			</arguments>
+-		</buildCommand>
+-	</buildSpec>
+-	<natures>
+-		<nature>org.eclipse.jdt.core.javanature</nature>
+-	</natures>
+-</projectDescription>
+Index: Creational Design Patterns/Singleton/Factory/src/module-info.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Factory/src/module-info.java b/Creational Design Patterns/Singleton/Factory/src/module-info.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Factory/src/module-info.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,9 +0,0 @@
+-/**
+- * 
+- */
+-/**
+- * @author VISWANADHAM
+- *
+- */
+-module Factory {
+-}
+\ No newline at end of file
+Index: Creational Design Patterns/Singleton/Prototype/src/prototype/Main.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Prototype/src/prototype/Main.java b/Creational Design Patterns/Singleton/Prototype/src/prototype/Main.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Prototype/src/prototype/Main.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,14 +0,0 @@
+-package prototype;
+-
+-public class Main {
+-
+-	public static void main(String[] args) throws CloneNotSupportedException {
+-		// TODO Auto-generated method stub
+-         Prototype p=new Prototype();
+-         Bean warrior=p.createCharcterwithNewName("Warrior");
+-         Bean mage=p.createCharcterwithNewlevel(10);
+-         Bean knight=p.createCharcterwithNewattackPower(100);
+-         
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Factory/src/Factory/Main.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Factory/src/Factory/Main.java b/Creational Design Patterns/Singleton/Factory/src/Factory/Main.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Factory/src/Factory/Main.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,15 +0,0 @@
+-package Factory;
+-
+-import java.util.Scanner;
+-
+-public class Main {
+-
+-	public static void main(String[] args) {
+-		// TODO Auto-generated method stub
+-          Scanner sc=new Scanner(System.in);
+-          String s=sc.next();
+-          Vehicle obj=VehicleFactory.getFactory(s);
+-          obj.createVehicle();
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Prototype/.classpath
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Prototype/.classpath b/Creational Design Patterns/Singleton/Prototype/.classpath
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Prototype/.classpath	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<classpath>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+-		<attributes>
+-			<attribute name="module" value="true"/>
+-		</attributes>
+-	</classpathentry>
+-	<classpathentry kind="src" path="src"/>
+-	<classpathentry kind="output" path="bin"/>
+-</classpath>
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/TextBox.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/TextBox.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/TextBox.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/TextBox.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,5 +0,0 @@
+-package abstract_Factory;
+-
+-public interface TextBox {
+-   public void showText();
+-}
+Index: Creational Design Patterns/Singleton/Singleton/src/Singleton/Main.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/src/Singleton/Main.java b/Creational Design Patterns/Singleton/Singleton/src/Singleton/Main.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/src/Singleton/Main.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,31 +0,0 @@
+-package Singleton;
+-
+-public class Main {
+-
+-	public static void main(String[] args) {
+-		// TODO Auto-generated method stub
+-         Eager obj=Eager.getInstance();
+-         obj.getFun();
+-         
+-         Lazy obj2=Lazy.getInstance();
+-         obj2.getFun();
+-         
+-         Synchrons obj3= Synchrons.getInstance();
+-         obj3.getFun();
+-         
+-         DoubleLock obj4= DoubleLock.getInstance();
+-         obj4.getFun();
+-         
+-         BillPugh obj5= BillPugh.getInstance();
+-         obj5.getFun();
+-         
+-         DBConnection obj6=DBConnection.INSTANCE;
+-         obj6.getFun();
+-         
+-         DBConnection obj7=DBConnection.INSTANCE;
+-         obj7.getFun();
+-         
+-         System.out.println(obj6.hashCode()+ " " + obj7.hashCode());
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Abstract_Factory/.project
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/.project b/Creational Design Patterns/Singleton/Abstract_Factory/.project
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/.project	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<projectDescription>
+-	<name>Abstract_Factory</name>
+-	<comment></comment>
+-	<projects>
+-	</projects>
+-	<buildSpec>
+-		<buildCommand>
+-			<name>org.eclipse.jdt.core.javabuilder</name>
+-			<arguments>
+-			</arguments>
+-		</buildCommand>
+-	</buildSpec>
+-	<natures>
+-		<nature>org.eclipse.jdt.core.javanature</nature>
+-	</natures>
+-</projectDescription>
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WinTextBox.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WinTextBox.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WinTextBox.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/WinTextBox.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,11 +0,0 @@
+-package abstract_Factory;
+-
+-public class WinTextBox implements TextBox{
+-
+-	@Override
+-	public void showText() {
+-		// TODO Auto-generated method stub
+-		System.out.println("Window Text box");
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/Main.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/Main.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/Main.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/Main.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,21 +0,0 @@
+-package abstract_Factory;
+-
+-import java.util.Scanner;
+-
+-public class Main {
+-
+-	public static void main(String[] args) {
+-		// TODO Auto-generated method stub
+-       System.out.println("Enter your machine os");
+-       Scanner sc=new Scanner(System.in);
+-       String s=sc.next();
+-       IFactory fact=GUIAbstractFactory.createFActory(s);
+-       
+-       Button button=fact.createButton();
+-       button.press();
+-       
+-       TextBox textBox=fact.createTextBox();
+-       textBox.showText();
+-	}
+-
+-}
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/IFactory.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/IFactory.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/IFactory.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/IFactory.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,6 +0,0 @@
+-package abstract_Factory;
+-
+-public interface IFactory {
+-      public Button createButton();
+-      public TextBox createTextBox();
+-}
+Index: Creational Design Patterns/Singleton/Factory/src/Factory/VehicleFactory.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Factory/src/Factory/VehicleFactory.java b/Creational Design Patterns/Singleton/Factory/src/Factory/VehicleFactory.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Factory/src/Factory/VehicleFactory.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,15 +0,0 @@
+-package Factory;
+-
+-public class VehicleFactory {
+-
+-	public static Vehicle getFactory(String s) {
+-		Vehicle v=null;
+-		if(s.equals("car")) {
+-			v=new Car();
+-		}
+-		else if(s.equals("bike")) {
+-			v= new Bike();
+-		}
+-		return v;
+-	}
+-}
+Index: Creational Design Patterns/Singleton/Singleton/src/Singleton/BillPugh.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/src/Singleton/BillPugh.java b/Creational Design Patterns/Singleton/Singleton/src/Singleton/BillPugh.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/src/Singleton/BillPugh.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,19 +0,0 @@
+-package Singleton;
+-
+-public class BillPugh {
+-
+-	private BillPugh() {
+-		
+-	}
+-	
+-	private static class InnerBillPugh{
+-		private static BillPugh instance=new BillPugh();
+-	}
+-	public static BillPugh getInstance() {
+-		return InnerBillPugh.instance;
+-	}
+-	
+-	public void getFun() {
+-		  System.out.println("Bill Pugh Singleton Class");
+-	  }
+-}
+Index: Creational Design Patterns/Singleton/Factory/.classpath
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Factory/.classpath b/Creational Design Patterns/Singleton/Factory/.classpath
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Factory/.classpath	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<classpath>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+-		<attributes>
+-			<attribute name="module" value="true"/>
+-		</attributes>
+-	</classpathentry>
+-	<classpathentry kind="src" path="src"/>
+-	<classpathentry kind="output" path="bin"/>
+-</classpath>
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacButton.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacButton.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacButton.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacButton.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,11 +0,0 @@
+-package abstract_Factory;
+-
+-public class MacButton implements Button{
+-
+-	@Override
+-	public void press() {
+-		// TODO Auto-generated method stub
+-		System.out.println("Mac button");
+-	}
+- 
+-}
+Index: Creational Design Patterns/Singleton/Singleton/src/Singleton/Lazy.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/src/Singleton/Lazy.java b/Creational Design Patterns/Singleton/Singleton/src/Singleton/Lazy.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/src/Singleton/Lazy.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-package Singleton;
+-
+-public class Lazy {
+-	private static Lazy instance;
+-	  private Lazy() {
+-		  
+-	  }
+-	  public static Lazy getInstance() {
+-		  if(instance==null) {
+-			  instance=new Lazy();
+-		  }
+-		  return instance;
+-	  }
+-	  public void getFun() {
+-		  System.out.println("Lazy Singleton Class");
+-	  }
+-}
+Index: Creational Design Patterns/Singleton/Singleton/src/Singleton/DBConnection.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/src/Singleton/DBConnection.java b/Creational Design Patterns/Singleton/Singleton/src/Singleton/DBConnection.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/src/Singleton/DBConnection.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,8 +0,0 @@
+-package Singleton;
+-
+-public enum DBConnection {
+-    INSTANCE;
+-	 public void getFun() {
+-		  System.out.println("Enum Singleton Class");
+-	  }
+-}
+Index: Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacFactory.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacFactory.java b/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacFactory.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Abstract_Factory/src/abstract_Factory/MacFactory.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,17 +0,0 @@
+-package abstract_Factory;
+-
+-public class MacFactory implements IFactory{
+-
+-	@Override
+-	public Button createButton() {
+-		// TODO Auto-generated method stub
+-		return new MacButton();
+-	}
+-
+-	@Override
+-	public TextBox createTextBox() {
+-		// TODO Auto-generated method stub
+-		return new MacTextBox();
+-	}
+-  
+-}
+Index: Creational Design Patterns/Singleton/Factory/src/Factory/Vehicle.java
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Factory/src/Factory/Vehicle.java b/Creational Design Patterns/Singleton/Factory/src/Factory/Vehicle.java
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Factory/src/Factory/Vehicle.java	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,5 +0,0 @@
+-package Factory;
+-
+-public interface Vehicle {
+-   public void createVehicle();
+-}
+Index: Creational Design Patterns/Singleton/Singleton/.classpath
+===================================================================
+diff --git a/Creational Design Patterns/Singleton/Singleton/.classpath b/Creational Design Patterns/Singleton/Singleton/.classpath
+deleted file mode 100644
+--- a/Creational Design Patterns/Singleton/Singleton/.classpath	(revision 2628f5bc5879da22843b4c85342de30b41967886)
++++ /dev/null	(revision 2628f5bc5879da22843b4c85342de30b41967886)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<classpath>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+-		<attributes>
+-			<attribute name="module" value="true"/>
+-		</attributes>
+-	</classpathentry>
+-	<classpathentry kind="src" path="src"/>
+-	<classpathentry kind="output" path="bin"/>
+-</classpath>
